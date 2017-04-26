@@ -1,24 +1,24 @@
 <%= form_for :user, url: users_create_path do |f| %>
   <p>
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, required: true %>
   </p>
 
   <p>
-	<%= f.radio_button :gender, "0"%>
+	<%= f.radio_button :gender, "0" , required: true%>
 	<%= label_tag(:gender_female, "Female")%>
 	<%= f.radio_button :gender, "1"%>
-	<%= label_tag(:gender_male, "Male")%>
+	<%= label_tag(:gender_male, "Male", required: true)%>
   </p>
 
   <p>
     <%= f.label :age %><br>
-    <%= f.text_field :age %>
+    <%= f.text_field :age, required: true %>
   </p>
 
   <p>
     <%= f.label :email %><br>
-    <%= f.text_field :email %>
+    <%= f.text_field :email, required: true, :pattern => '[^@]+@[^@]+\.[a-zA-Z]{2,6}' %>
   </p>
 
   <p>
@@ -28,7 +28,7 @@
 
   <p>
     <%= f.label :phone %><br>
-    <%= f.text_field :phone %>
+    <%= f.text_field :phone, required: true %>
   </p>
 
   <p>
