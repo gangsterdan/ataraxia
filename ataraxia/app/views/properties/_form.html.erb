@@ -1,0 +1,6 @@
+<%= form_for :properties, url: properties_new_path do |f| %>
+ <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name, required: true %>
+  </p>
+  <% end %>

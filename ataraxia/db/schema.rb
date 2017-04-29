@@ -22,6 +22,15 @@ ActiveRecord::Schema.define(version: 20170425191946) do
     t.integer  "lesee"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.boolean  "elevator"
+    t boolean "ground_floor"
+    t.boolean "pets_allowed"
+    t.boolean "furnished"
+    t.boolean "cleaning_service"
+    t.boolean "female_rommies"
+    t.boolean "male_roomies"
+    t.boolean "gym"
+    t.boolean "smoking_is_allowed"
     t.index ["user_id"], name: "index_properties_on_user_id"
   end
 

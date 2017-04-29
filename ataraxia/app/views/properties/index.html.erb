@@ -1,0 +1,53 @@
+<h1>Properties#index</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>name</th>
+      <th>addres</th>
+      <th>description</th>
+      <th>price</th>
+      <th>avaliable</th>
+      <th>user_id</th>
+      <th>lesee</th>
+      <th>created_at</th>
+      <th>updated_at</th>
+      <th>elevator</th>
+      <th>ground_floor</th>
+      <th>pets_allowed</th>
+      <th>furnished</th>
+      <th>cleaning_service</th>
+      <th>female_roomies</th>
+      <th>male_roomies</th>
+      <th>gym</th>
+      <th>smoking_is_allowed</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @property.each do |property| %>
+      <tr>
+        <td><%= property.name %></td>
+        <td><%= property.addres %></td>
+        <td><%= property.description %></td>
+        <td><%= property.price %></td>
+        <td><%= property.avaliable %></td>
+        <td><%= property.user_id %></td>
+        <td><%= property.lesee %></td>
+        <td><%= property.created_at %></td>
+        <td><%= property.updated_at %></td>
+        <td><%= property.elevator %></td>
+        <td><%= property.ground_floor %></td>
+        <td><%= property.pets_allowed %></td>
+        <td><%= property.furnished %></td>
+        <td><%= property.cleaning_service %></td>
+        <td><%= property.female_roomies %></td>
+        <td><%= property.male_roomies %></td>
+        <td><%= property.gym %></td>
+        <td><%= property.smoking_is_allowed%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+--<%= link_to 'Búsqueda', properties_new_path %>
