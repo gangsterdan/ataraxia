@@ -6,8 +6,18 @@ one:
   description: MyString
   price: 9.99
   available: false
-  user: one
   lesee: 1
+  distance: 1
+  elevator: false
+  ground_floor: false
+  pets_allowed: false
+  furnished: false
+  cleaning_service: false
+  female_roomies: false
+  male_rommies: false
+  gym: false
+  smoking_is_allowed: false
+  user: one
 
 two:
   name: MyString
@@ -15,5 +25,15 @@ two:
   description: MyString
   price: 9.99
   available: false
-  user: two
   lesee: 1
+  distance: 1
+  elevator: false
+  ground_floor: false
+  pets_allowed: false
+  furnished: false
+  cleaning_service: false
+  female_roomies: false
+  male_rommies: false
+  gym: false
+  smoking_is_allowed: false
+  user: two
