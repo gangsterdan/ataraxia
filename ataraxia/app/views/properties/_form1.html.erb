@@ -1,0 +1,76 @@
+<%= form_for :properties, url: properties_show_path do |f| %>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <!--<p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name, required: true %>
+  </p>-->
+<p>
+<p>
+<i class="fa fa-home"></i>
+ <%= label_tag(:property_type, "Tipo de Propiedad") %>
+ </p>
+  <%= f.select :property_type, options_for_select([["Casa", "c"], ["Departamento", "d"],["Cuarto", "cu"]]) %>
+</p>
+  <p>
+
+  
+  <%= check_box_tag(:elevator, "1" )%>
+<%= label_tag(:elevator, "Elevator") %>
+</p>
+<p>
+<%= check_box_tag(:ground_floor,"1") %>
+<%= label_tag(:ground_floor, "Groundfloor") %>
+</p>
+<p>
+<%= check_box_tag(:pets_allowed) %>
+<%= label_tag(:pets_allowed, "Pets allowed") %>
+</p>
+<p>
+<%= check_box_tag(:furnished) %>
+<%= label_tag(:furnished, "Furnished") %>
+</p>
+<p>
+<%= check_box_tag(:cleaning_service) %>
+<%= label_tag(:cleaning_service, "Cleaning Service") %>
+</p>
+<p>
+<%= check_box_tag(:female_roomies) %>
+<%= label_tag(:female_roomies, "Female rommies") %>
+</p>
+<p>
+<%= check_box_tag(:male_roomies) %>
+<%= label_tag(:male_roomies, "Male roomies") %>
+</p>
+<p>
+<%= check_box_tag(:gym) %>
+<%= label_tag(:gym, "Gym") %>
+</p>
+<p>
+<%= check_box_tag(:smoking_is_allowed) %>
+<%= label_tag(:smoking_is_allowed, "Smoking") %>
+</p>
+<p>
+<label for="llegar al ITAM">¿Cómo planeas llegar al ITAM?</label>
+</p>
+<p>
+<i class="fa fa-male"></i>
+<%= check_box_tag(:very_close) %>
+<%= label_tag(:very_close, "") %>
+</p>
+<p>
+<i class="fa fa-bicycle"></i>
+<%= check_box_tag(:near) %>
+<%= label_tag(:near, "") %>
+</p>
+<p>
+<i class="fa fa-car "></i>
+<label for="or">or</label>
+<i class="fa fa-motorcycle "></i>
+<%= check_box_tag(:far) %>
+<%= label_tag(:far, "") %>
+</p>
+ <p>
+ <%= button_to "Buscar", properties_path %>
+ 
+  </p>
+  <% end %>
