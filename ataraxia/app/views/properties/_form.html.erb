@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <html>
 <head>
   <title>Properties</title>
@@ -48,7 +49,7 @@
   </nav>
 
 
-<%= form_for :properties, url: properties_create_path do |f| %>
+<%= form_for :properties, url: properties_new_path do |f| %>
 <div class="container">
   <div class="form-group jumbotron">
     <h1>Agregar una Propiedad</h1>
@@ -191,3 +192,77 @@
 
   </body>
 </html>
+=======
+<%= form_for :properties, url: properties_new_path do |f| %>
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name, required: true %>
+  </p>
+<p>
+    <%= f.label :address %><br>
+    <%= f.text_field :address, required: true %>
+  </p>
+<p>
+    <%= f.label :distance %><br>
+    <%= f.text_field :distance, required: true %>
+  </p>
+<p>
+    <%= f.label :description %><br>
+    <%= f.text_field :description, required: true %>
+  </p>
+<p>
+    <%= f.label :price %><br>
+    <%= f.text_field :price, required: true %>
+  </p>
+<p>
+    <%= f.label :user_id %><br>
+    <%= f.text_field :user_id, required: true %>
+  </p>
+<p>
+    <%= f.label :lesee %><br>
+    <%= f.text_field :lesee, required: true %>
+  </p>
+<p>
+	<%= hidden_field_tag :available, '1' %>
+</p>
+  <p>
+	<%= f.check_box :elevator %>
+	<%= label_tag(:elevator, "Elevator")%>
+  </p>
+  <p>
+	<%= f.check_box :ground_floor %>
+	<%= label_tag(:ground_floor, "Ground Floor")%>
+  </p>
+  <p>
+	<%= f.check_box :pets_allowed %>
+	<%= label_tag(:pets_allowed, "Pets allowed")%>
+  </p>
+  <p>
+	<%= f.check_box :furnished %>
+	<%= label_tag(:furnished, "Furnished")%>
+  </p>
+  <p>
+	<%= f.check_box :cleaning_service%>
+	<%= label_tag(:cleaning_service, "Cleaning service")%>
+  </p>
+  <p>
+	<%= f.check_box :female_roomies  %>
+	<%= label_tag(:female_roomies, "Female roomies")%>
+  </p>
+  <p>
+	<%= f.check_box :male_roomies  %>
+	<%= label_tag(:male_roomies, "Male roomies")%>
+  </p>
+  <p>
+	<%= f.check_box :gym %>
+	<%= label_tag(:gym, "Gym")%>
+  </p>
+  <p>
+	<%= f.check_box :smoking_is_allowed %>
+	<%= label_tag(:smoking_is_allowed, "Smoking")%>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+  <% end %>
+>>>>>>> 0befb137a7f24fbdbd69fd30d56dc347262cdbd1

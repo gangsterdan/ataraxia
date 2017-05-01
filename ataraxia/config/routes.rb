@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
 
 	#default
-	get '/' => 'home#index'
 
+
+  get '/' => 'home#index' 
   get 'home/index'
 
 	post 'users/create' => 'users#create'
@@ -14,6 +15,9 @@ Rails.application.routes.draw do
 	post 'properties/show' => 'properties#show'
 	get 'properties/new' => 'properties#new'
 	get 'properties' => 'properties#index'
+	get 'properties/show' => 'properties/show'
+	
+
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
