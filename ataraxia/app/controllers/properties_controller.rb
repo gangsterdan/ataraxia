@@ -16,4 +16,8 @@ class PropertiesController < ApplicationController
 
   def destroy
   end
+
+  def information
+  	@property=Property.find(params[:id])
+  end
 end

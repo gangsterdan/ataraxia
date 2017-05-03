@@ -16,6 +16,7 @@ Rails.application.routes.draw do
 	get 'properties/new' => 'properties#new'
 	get 'properties' => 'properties#index'
 	get 'properties/show' => 'properties/show'
+	get 'properties/information' => 'properties#information'
 	
 
 
