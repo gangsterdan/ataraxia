@@ -15,4 +15,33 @@ class UsersController < ApplicationController
 
   def destroy
   end
+
+  def login
+  end
+
+  def loginValidate
+    user = User.find_by(email: params[:user][:email])
+    if user && user.password == params[:user][:password]
+      session[:current_user_id] = user.id #Crea session con el ID ya validado
+      redirect_to users_dashboard_path #dashboard
+    else
+      puts '\n\nCombinación de email y constraseña incorrecta\n\n'
+    end
+  end
+
+  def dashboard
+    if session[:current_user_id] == nil
+      redirect_to users_login_path
+    else
+      @user = User.find(session[:current_user_id]) #Conseguir el user.
+    end
+  end
+
+  def dashboardLogout
+    reset_session #borrar toda la sesión!!
+    redirect_to "/"
+  end
+
+
+
 end
