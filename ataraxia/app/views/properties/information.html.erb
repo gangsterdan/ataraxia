@@ -1,2 +1,37 @@
-<h1>Infomación</h1>
-<%= @property.name%>
+
+<h1><%= @property.name%></h1>
+
+Renta mensual: <%= @property.price%>
+<hr>
+Descripción<br><br>
+<%= @property.description%>
+<hr>
+Servicios <br><br>
+<% if @property.elevator %>
+	Elevador<br>
+<% end %>
+<% if @property.ground_floor %>
+	Ground floor<br>
+<% end %>
+<% if @property.pets_allowed %>
+	Pets allowed<br>
+<% end %>
+<% if @property.furnished %>
+	Furnished<br>
+<% end %>
+<% if @property.cleaning_service %>
+	Cleaning service<br>
+<% end %>
+<% if @property.female_roomies %>
+	Female roomies<br>
+<% end %>
+<% if @property.male_roomies %>
+	Male roomies<br>
+<% end %>
+<% if @property.gym %>
+	Gym<br>
+<% end %>
+<% if @property.smoking_is_allowed %>
+	Smoking allowed<br>
+<% end %>
+
