@@ -38,23 +38,25 @@ Servicios <br><br>
 
 
 
-
-<%= form_for :proposals, url: proposals_create_path do |f| %>
-          <p>
-          <%= f.text_field :property_id, hidden: true, value: @property.id %>
-        </p>
-        <p>
-          <%= f.text_field :lesee_id, hidden: true, value: @user.id %>
-        </p>
-        <p>
-          <%= f.text_field :user_id, hidden: true, value: @property.user_id %>
-        </p>
-       <p>
-          <%= f.submit %>
-          </p>
+<% if @property.available %>
+	
+    <%= form_for :proposals, url: proposals_create_path do |f| %>
+              <p>
+              <%= f.text_field :property_id, hidden: true, value: @property.id %>
+            </p>
+            <p>
+              <%= f.text_field :lesee_id, hidden: true, value: @user.id %>
+            </p>
+            <p>
+              <%= f.text_field :user_id, hidden: true, value: @property.user_id %>
+            </p>
+           <p>
+              <%= f.submit %>
+              </p>
+    <% end %>
+<% else %>
+    <h2>La propiedad no se encuentra disponible en este momento.<h2>
 <% end %>
-    
-
 
 
 
