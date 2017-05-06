@@ -36,6 +36,7 @@ class UsersController < ApplicationController
       @user = User.find(session[:current_user_id]) #Conseguir el user.
       @propertylessor = Property.where(user_id: session[:current_user_id])
       @propertylesee = Property.where(lesee: session[:current_user_id])
+      @proposal = Proposal.where(user_id: session[:current_user_id])
     end
   end
 

@@ -35,3 +35,27 @@ Servicios <br><br>
 	Smoking allowed<br>
 <% end %>
 
+
+
+
+
+<%= form_for :proposals, url: proposals_create_path do |f| %>
+          <p>
+          <%= f.text_field :property_id, hidden: true, value: @property.id %>
+        </p>
+        <p>
+          <%= f.text_field :lesee_id, hidden: true, value: @user.id %>
+        </p>
+        <p>
+          <%= f.text_field :user_id, hidden: true, value: @property.user_id %>
+        </p>
+       <p>
+          <%= f.submit %>
+          </p>
+<% end %>
+    
+
+
+
+
+

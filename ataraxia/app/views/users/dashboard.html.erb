@@ -37,6 +37,27 @@
   </tbody>
 </table>
 
+<h1>Proposals for your properties</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre del cliente</th>
+      <th>Nombre de la casa</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @proposal.each do |proposal| %>
+      <tr>
+        <td><%= proposal.lesee_id %></td>
+        <td><%= proposal.property_id %></td> 
+	<td><%= link_to "Aceptar propuesta", proposals_accept_path(:property_id => proposal.property_id, :lesee_id => proposal.lesee_id, :proposal_id => proposal.id)%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
 <h1>Properties you are paying for</h1>
 
 <table>
