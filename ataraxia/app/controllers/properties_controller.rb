@@ -4,7 +4,12 @@ class PropertiesController < ApplicationController
   end
 
   def new
-	@property = Property.new
+    if session[:current_user_id] == nil
+      redirect_to users_login_path
+    else
+      @property = Property.new
+      @user = User.find(session[:current_user_id]) #Conseguir el user.
+    end
   end
 
   def create
