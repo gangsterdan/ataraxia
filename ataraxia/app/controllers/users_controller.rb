@@ -34,6 +34,8 @@ class UsersController < ApplicationController
       redirect_to users_login_path
     else
       @user = User.find(session[:current_user_id]) #Conseguir el user.
+      @propertylessor = Property.where(user_id: session[:current_user_id])
+      @propertylesee = Property.where(lesee: session[:current_user_id])
     end
   end
 
