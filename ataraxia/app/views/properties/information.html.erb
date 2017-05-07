@@ -42,8 +42,7 @@ Servicios <br><br>
 	Smoking allowed<br>
 <% end %>
 
-
-
+<%= link_to 'Message me!', conversations_path(sender_id: @user.id, recipient_id: @property.user_id), method: 'post'%>
 
 <% if @property.available %>
 	
