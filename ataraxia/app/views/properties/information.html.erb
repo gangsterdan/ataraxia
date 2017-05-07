@@ -1,6 +1,13 @@
 
 <h1><%= @property.name%></h1>
 
+<% if @property.image.url == "/images/original/missing.png"%>
+No Photos
+<% else %>
+
+<%= link_to image_tag(@property.image.url), @property.image.url%>
+<%end%>
+<br><br>
 Renta mensual: <%= @property.price%>
 <hr>
 Descripción<br><br>
