@@ -1,0 +1,35 @@
+<h1>Properties#index</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Imagen</th>
+      <th>Casa</th>
+      <th>Dirección</th>
+      <th>description</th>
+      <th>Precio/mes</th>
+      <th>Disponible</th>
+
+
+
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @property.each do |property| %>
+      <tr>
+        <td><%= image_tag property.image.url(:thumb) %></td>
+        <td><%= property.name %></td>
+        <td><%= property.address %></td>
+        <td><%= property.description %></td>
+        <td><%= property.price %></td>
+        <td><%= property.available %></td>
+    
+
+	<td><%= link_to "More info", properties_information_path(:id => property.id)%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+--<%= link_to 'Nueva', properties_new_path %>

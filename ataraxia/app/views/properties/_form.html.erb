@@ -1,0 +1,244 @@
+<html>
+<head>
+  <title>Properties</title>
+
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style type="text/css">
+      body{
+      padding-top: 120px;
+
+      background: url(http://resources.phrasemix.com/img/full/suburban-houses.jpg);
+
+     background-size: cover;
+      background-repeat: no-repeat;
+  }
+
+.jumbotron{
+    opacity: 0.9;
+
+  }
+
+    </style>
+</head>
+<body>
+
+<%= render 'shared/navbar' %>
+
+<%= form_for :properties, url: properties_create_path do |f| %>
+<div class="container">
+  <div class="form-group jumbotron">
+    <h1>Agregar una Propiedad</h1>
+    <!-- <div class="row">
+      <div class="col-lg-3"> -->
+        <div class="row">
+           <div class="col-lg-6">
+            <p>
+          <%= f.label :Nombre %><br>
+          <%= f.text_field :name, required: true %>
+        </p>
+
+        <p>
+          <%= f.label :Precio_por_mes %><br>
+          <%= f.text_field :price, required: true %>
+        </p>
+
+        <p>
+          <%= f.text_field :available, hidden: true, value: '1' %>
+        </p>
+        <p>
+          <%= f.text_field :user_id, hidden: true, value: @user.id %>
+        </p>
+
+      <!-- </div>
+      <div class="col-lg-3"> -->
+        <p>
+          <%= f.label :Dirección %><br>
+          <%= f.text_field :address, required: true %>
+        </p>
+<!--
+        <p>
+          <%= f.label :Usuario %><br>
+          <%= f.text_field :user_id, required: true %>
+        </p> -->
+
+
+      <!-- </div>
+      <div class="col-lg-3"> -->
+        <p>
+          <%= f.label :Distancia %><br>
+          <%= f.text_field :distance, required: true %>
+        </p>
+
+
+      <!-- </div>
+      <div class="col-lg-3"> -->
+        <p>
+          <%= f.label :Descripción %><br>
+          <%= f.text_field :description, required: true %>
+        </p>
+     <!--  </div> -->
+
+
+            </div>
+            <div class="col-lg-6">
+
+              <!-- <div class="row">
+        <div class="col-lg-4"> -->
+
+              <p>
+                <%= f.check_box :ground_floor %>
+                <%= label_tag(:ground_floor, "Planta Baja")%>
+              </p>
+
+
+              <p>
+                <%= f.check_box :pets_allowed %>
+                <%= label_tag(:pets_allowed, "Mascotas Permitidas")%>
+               </p>
+
+              <p>
+                <%= f.check_box :furnished %>
+                <%= label_tag(:furnished, "Amueblado")%>
+              </p>
+
+       <!--  </div>
+        <div class="col-lg-4"> -->
+               <p>
+                <%= f.check_box :elevator %>
+                <%= label_tag(:elevator, "Elevador")%>
+              </p>
+
+              <p>
+                <%= f.check_box :cleaning_service%>
+                <%= label_tag(:cleaning_service, "Servicio de Limpieza")%>
+              </p>
+              <p>
+                <%= f.check_box :female_roomies  %>
+                <%= label_tag(:female_roomies, "Rommies Mujeres")%>
+              </p>
+
+        <!--   </div>
+          <div class="col-lg-4"> -->
+
+              <p>
+                <%= f.check_box :male_roomies  %>
+                <%= label_tag(:male_roomies, "Rommies Hombres")%>
+              </p>
+              <p>
+                <%= f.check_box :gym %>
+                <%= label_tag(:gym, "Gimnasio")%>
+              </p>
+              <p>
+                <%= f.check_box :smoking_is_allowed %>
+                <%= label_tag(:smoking_is_allowed, "Fumar")%>
+              </p>
+            <div class="field"><%= f.label :image%><%= f.file_field :image%></div>
+          </div>
+
+          </div>
+
+
+
+
+
+
+
+
+
+
+        <!-- </div> -->
+
+
+
+    <div class="row">
+      <div class="col-lg-4"></div>
+      <div class="col-lg-4">
+        <p>
+        <%= f.submit %>
+      </p>
+      <% end %>
+      </div>
+      <div class="col-lg-4"></div>
+    </div>
+    </div>
+   </div>
+
+  </body>
+</html>
+=======
+
+<!-- Forma repetida!!
+<%= form_for :properties, url: properties_new_path do |f| %>
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name, required: true %>
+  </p>
+<p>
+    <%= f.label :address %><br>
+    <%= f.text_field :address, required: true %>
+  </p>
+<p>
+    <%= f.label :distance %><br>
+    <%= f.text_field :distance, required: true %>
+  </p>
+<p>
+    <%= f.label :description %><br>
+    <%= f.text_field :description, required: true %>
+  </p>
+<p>
+    <%= f.label :price %><br>
+    <%= f.text_field :price, required: true %>
+  </p>
+<p>
+    <%= f.label :user_id %><br>
+    <%= f.text_field :user_id, required: true %>
+  </p>
+<p>
+    <%= f.label :lesee %><br>
+    <%= f.text_field :lesee, required: true %>
+  </p>
+<p>
+	<%= hidden_field_tag :available, '1' %>
+</p>
+  <p>
+	<%= f.check_box :elevator %>
+	<%= label_tag(:elevator, "Elevator")%>
+  </p>
+  <p>
+	<%= f.check_box :ground_floor %>
+	<%= label_tag(:ground_floor, "Ground Floor")%>
+  </p>
+  <p>
+	<%= f.check_box :pets_allowed %>
+	<%= label_tag(:pets_allowed, "Pets allowed")%>
+  </p>
+  <p>
+	<%= f.check_box :furnished %>
+	<%= label_tag(:furnished, "Furnished")%>
+  </p>
+  <p>
+	<%= f.check_box :cleaning_service%>
+	<%= label_tag(:cleaning_service, "Cleaning service")%>
+  </p>
+  <p>
+	<%= f.check_box :female_roomies  %>
+	<%= label_tag(:female_roomies, "Female roomies")%>
+  </p>
+  <p>
+	<%= f.check_box :male_roomies  %>
+	<%= label_tag(:male_roomies, "Male roomies")%>
+  </p>
+  <p>
+	<%= f.check_box :gym %>
+	<%= label_tag(:gym, "Gym")%>
+  </p>
+  <p>
+	<%= f.check_box :smoking_is_allowed %>
+	<%= label_tag(:smoking_is_allowed, "Smoking")%>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+  <% end %>
+>>>>>>> 0befb137a7f24fbdbd69fd30d56dc347262cdbd1
+-->

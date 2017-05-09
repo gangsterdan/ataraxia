@@ -1,0 +1,33 @@
+<h1>Users#index</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>name</th>
+      <th>gender</th>
+      <th>age</th>
+      <th>email</th>
+      <th>password</th>
+      <th>phone</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.gender %></td>
+        <td><%= user.age %></td>
+        <td><%= user.email %></td>
+        <td><%= user.password %></td>
+        <td><%= user.phone %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<h1>Log in</h1>
+
+
+    <p>Nuevo usuario? <%= link_to 'Crea tu cuenta!', users_new_path %></p>

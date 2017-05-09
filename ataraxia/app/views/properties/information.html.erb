@@ -1,0 +1,69 @@
+
+<h1><%= @property.name%></h1>
+
+<% if @property.image.url == "/images/original/missing.png"%>
+No Photos
+<% else %>
+
+<%= link_to image_tag(@property.image.url), @property.image.url%>
+<%end%>
+<br><br>
+Renta mensual: <%= @property.price%>
+<hr>
+Descripción<br><br>
+<%= @property.description%>
+<hr>
+Servicios <br><br>
+<% if @property.elevator %>
+	Elevador<br>
+<% end %>
+<% if @property.ground_floor %>
+	Ground floor<br>
+<% end %>
+<% if @property.pets_allowed %>
+	Pets allowed<br>
+<% end %>
+<% if @property.furnished %>
+	Furnished<br>
+<% end %>
+<% if @property.cleaning_service %>
+	Cleaning service<br>
+<% end %>
+<% if @property.female_roomies %>
+	Female roomies<br>
+<% end %>
+<% if @property.male_roomies %>
+	Male roomies<br>
+<% end %>
+<% if @property.gym %>
+	Gym<br>
+<% end %>
+<% if @property.smoking_is_allowed %>
+	Smoking allowed<br>
+<% end %>
+
+<%= link_to 'Message me!', conversations_path(sender_id: @user.id, recipient_id: @property.user_id), method: 'post'%>
+
+<% if @property.available %>
+	
+    <%= form_for :proposals, url: proposals_create_path do |f| %>
+              <p>
+              <%= f.text_field :property_id, hidden: true, value: @property.id %>
+            </p>
+            <p>
+              <%= f.text_field :lesee_id, hidden: true, value: @user.id %>
+            </p>
+            <p>
+              <%= f.text_field :user_id, hidden: true, value: @property.user_id %>
+            </p>
+           <p>
+              <%= f.submit %>
+              </p>
+    <% end %>
+<% else %>
+    <h2>La propiedad no se encuentra disponible en este momento.<h2>
+<% end %>
+
+
+
+
